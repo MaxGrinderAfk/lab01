@@ -1,0 +1,8 @@
+*.vpj
+*.vpw
+*.vpwhistuxml
+*.vtg
+laba1Target
+test/
+*.o
+Debug/
