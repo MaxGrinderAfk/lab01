@@ -14,7 +14,12 @@ int main (int argc, char *argv[]) {
 
     FTSENT *entry;
     while ((entry = fts_read(ftsp)) != NULL) {
-        if (entry->fts_level > 0 && entry->fts_name[0] == '.') continue;
+        if ((entry->fts_level > 0) && (entry->fts_name[0] == '.')) {
+            if (entry->fts_info == FTS_D) {
+                fts_set(ftsp, entry, FTS_SKIP);
+            }
+            continue;
+        }
         if (filterEntry(entry)) {
             printf("%s\n", entry->fts_path);
         }
