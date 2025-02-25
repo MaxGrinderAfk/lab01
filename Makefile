@@ -26,7 +26,13 @@ DEP = $(OBJ:.o=.d)
 -include $(DEP)
 
 clean:
-	rm -f $(OBJ_DIR) $(TARGET)
+	rm -rf $(OBJ_DIR) $(TARGET)
+
+memcheck: debug 
+	valgrind --leak-check=full \
+	--show-leak-kinds=all \
+	--track-origins=yes \
+	./$(TARGET)
 
 debug: CFLAGS = $(CFLAGS_DEBUG)
 debug: clean $(TARGET)
