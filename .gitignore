@@ -2,7 +2,7 @@
 *.vpw
 *.vpwhistuxml
 *.vtg
-laba1Target
+dirwalk
 test/
 *.o
 Debug/

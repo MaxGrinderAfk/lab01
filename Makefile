@@ -11,7 +11,7 @@ OBJ_DIR = test
 SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
-TARGET = laba1Target
+TARGET = dirwalk
 
 $(OBJ_DIR): 
 	mkdir -p $(OBJ_DIR)
