@@ -13,6 +13,8 @@ OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 TARGET = dirwalk
 
+all: $(TARGET)
+
 $(OBJ_DIR): 
 	mkdir -p $(OBJ_DIR)
 
