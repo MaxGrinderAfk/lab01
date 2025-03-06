@@ -28,7 +28,7 @@ DEP = $(OBJ:.o=.d)
 -include $(DEP)
 
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET)
+	rm -rf $(OBJ_DIR) Debug $(SRC_DIR)/Debug $(TARGET) 
 
 memcheck: debug 
 	valgrind --leak-check=full \

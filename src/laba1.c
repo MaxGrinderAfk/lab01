@@ -14,6 +14,10 @@ int main (int argc, char *argv[]) {
 
     FTSENT *entry;
     while ((entry = fts_read(ftsp)) != NULL) {
+        if (entry->fts_info == FTS_DP) {
+            continue; 
+        }
+
         if (filterEntry(entry)) {
             printf("%s\n", entry->fts_path);
         }

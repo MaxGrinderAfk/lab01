@@ -6,3 +6,4 @@ dirwalk
 test/
 *.o
 Debug/
+*.pdf
